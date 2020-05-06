@@ -35,6 +35,18 @@ public class BinaryTree {
 
     }
 
+
+    public void printInOrder(Node root){
+        if(root == null){
+            return;
+        }
+
+        printPreOrder(root.left);
+        System.out.println(root.data);
+        printPreOrder(root.right);
+    }
+
+
     public void printLevelOrder(Node root){
         Queue<Node> queue = new LinkedList<>();
 
@@ -66,17 +78,6 @@ public class BinaryTree {
             }
         }
         return false;
-    }
-
-    public void printInOrder(Node root){
-        if(root == null){
-            return;
-        }
-
-
-        printPreOrder(root.left);
-        System.out.println(root.data);
-        printPreOrder(root.right);
     }
 
 

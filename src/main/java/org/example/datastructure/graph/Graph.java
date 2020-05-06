@@ -27,10 +27,11 @@ public class Graph {
         boolean[] visited = new boolean[V];
         Queue<Integer> queue = new LinkedList<>();
         queue.add(s);
-        visited[s] = true;
+
 
         while (!queue.isEmpty()){
             int edge = queue.poll();
+            visited[edge] = true;
             System.out.println(edge);
 
             for (int node : adj[edge]) {
@@ -74,6 +75,8 @@ public class Graph {
         graph.addEdge(3,4);
         graph.addEdge(4,5);
         graph.addEdge(4,6);
+        graph.BFS(0);
+        System.out.println();
         graph.DFS(0);
     }
 
