@@ -1,7 +1,19 @@
 package org.example.datastructure.linkedlist;
 
 public class DoubleLinkList {
+    private Node head;
+    private Node tail;
+    private int size;
 
+    private static class Node {
+        int data;
+        Node next;
+        Node prev;
+
+        Node(int data) {
+            this.data = data;
+        }
+    }
     public static void main(String[] args) {
         DoubleLinkList list = new DoubleLinkList();
         list.add(1);
@@ -24,9 +36,7 @@ public class DoubleLinkList {
         }
     }
 
-    private Node head;
-    private Node tail;
-    private int size;
+
 
     public void add(int el) {
         Node node = new Node(el);
@@ -40,6 +50,7 @@ public class DoubleLinkList {
 
         Node tempNode = head;
         while (tempNode != tail) {
+            assert tempNode != null;
             tempNode = tempNode.next;
         }
         tempNode.next = node;
@@ -60,13 +71,4 @@ public class DoubleLinkList {
         return arr;
     }
 
-    private class Node {
-        int data;
-        Node next;
-        Node prev;
-
-        Node(int data) {
-            this.data = data;
-        }
-    }
 }

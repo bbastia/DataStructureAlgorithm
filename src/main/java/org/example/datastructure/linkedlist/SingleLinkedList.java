@@ -5,7 +5,25 @@ import java.util.Objects;
 
 public class SingleLinkedList<E> {
 
+    private Node head;
+
+    private int size;
+
+    public SingleLinkedList() {
+
+    }
+
+    private static class Node<T> {
+        private T data;
+        private Node next;
+
+        Node(T t) {
+            this.data = t;
+        }
+    }
+
     public static void main(String[] args) {
+
         SingleLinkedList<Integer> list = new SingleLinkedList<>();
         list.add(23);
         list.add(24);
@@ -22,6 +40,9 @@ public class SingleLinkedList<E> {
 
         System.out.println("Does exists: "+list.isExist(20));
     }
+
+
+
 
     private boolean isExist(E element) {
         Node tempNode = head;
@@ -107,12 +128,6 @@ public class SingleLinkedList<E> {
 
     }
 
-    private Node head;
-    private int size;
-
-    public SingleLinkedList() {
-
-    }
 
     public void add(E element) {
         Node<E> node = new Node(element);
@@ -143,13 +158,4 @@ public class SingleLinkedList<E> {
         return objects;
     }
 
-
-    private static class Node<T> {
-        private T data;
-        private Node next;
-
-        Node(T t) {
-            this.data = t;
-        }
-    }
 }

@@ -1,6 +1,21 @@
 package org.example.datastructure.linkedlist;
 
 public class CircularLinkedList {
+
+    private int size;
+    private Node head;
+    private Node tail;
+
+    private static class Node {
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+        }
+    }
+
+
     public static void main(String[] args) {
 
         CircularLinkedList list = new CircularLinkedList();
@@ -67,9 +82,7 @@ public class CircularLinkedList {
         size++;
     }
 
-    private int size;
-    private Node head;
-    private Node tail;
+
 
     public void add(int data) {
         Node node = new Node(data);
@@ -110,12 +123,5 @@ public class CircularLinkedList {
        if(tail != null) System.out.print(tail.next.data);
     }
 
-    private static class Node {
-        int data;
-        Node next;
 
-        Node(int data) {
-            this.data = data;
-        }
-    }
 }
